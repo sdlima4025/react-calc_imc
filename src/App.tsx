@@ -2,7 +2,8 @@ import { useState } from "react";
 import styles from "./App.module.css";
 import powerredImage from "./assets/powered.png";
 import { levels, calculateImc } from "./helpers/imc";
-
+import { title } from "process";
+import { GridItem } from "./components/GridItem";
 const App = () => {
   const [heightField, setHeightField] = useState<number>(0);
   const [weightField, setWeightField] = useState<number>(0);
@@ -23,11 +24,11 @@ const App = () => {
         <div className={styles.leftSide}>
           <h1>Calcule o seu IMC</h1>
           <p>
-            O IMC, é índice de massa corpórea, que mede se você está, 
-            abaixo, dentro ou acima do peso, de acordo com a relação
-            entre seu peso e altura. Descubra como calcular esse índice, quais
-            os valores ideais, as exceções da tabela padrão, a especificidade do
-            IMC para crianças e jovens.
+            O IMC, é índice de massa corpórea, que mede se você está, abaixo,
+            dentro ou acima do peso, de acordo com a relação entre seu peso e
+            altura. Descubra como calcular esse índice, quais os valores ideais,
+            as exceções da tabela padrão, a especificidade do IMC para crianças
+            e jovens.
           </p>
 
           <input
@@ -44,9 +45,15 @@ const App = () => {
           />
 
           <button onClick={handleCalculeteButton}>Calcular</button>
-        </div>...
+        </div>
 
-        <div className={styles.rightSide}></div>
+        <div className={styles.rightSide}>
+          <div className={styles.grid}>
+            {levels.map((item, key) => (
+              <GridItem key={key} item={item} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
