@@ -6,10 +6,14 @@ export type Level = {
   yourImc?: number;
 };
 export const levels: Level[] = [
-  { title: "Magreza", color: "#96A3AB", icon: "down", imc: [0, 15.5] },
-  { title: "Normal", color: "#0EAD69", icon: "up", imc: [15.6, 24.99] },
-  { title: "Sobrepeso", color: "#E2B039", icon: "down", imc: [25, 30] },
-  { title: "Obesidade", color: "#C3423F", icon: "down", imc: [30.1, 99] },
+  { title: "Baixo-peso G³", color: "#C34230", icon: "down", imc: [0.00, 15.99] },
+  { title: "Baixo-peso G²", color: "#0EAD60", icon: "down", imc: [16.00, 16.99] },
+  { title: "Baixo-peso G¹", color: "#E2B030", icon: "down", imc: [17.00, 18.49] },
+  { title: "Peso deal", color: "#227c9d", icon: "up", imc: [18.50, 24.99] },
+  { title: "Sobrepeso", color: "#96A3AC", icon: "down", imc: [25.00, 29.99] },
+  { title: "Obesidade G¹", color: "#0EAD60", icon: "down", imc: [30.00, 34.99] },
+  { title: "Obesidade G²", color: "#E2B030", icon: "down", imc: [35.00, 39.99] },
+  { title: "Obesidade G³", color: "#C34230", icon: "down", imc: [40.00, 99.50] },
 ];
 
 export const calculateImc = (height: number, weight: number) => {

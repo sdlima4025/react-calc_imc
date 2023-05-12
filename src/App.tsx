@@ -21,7 +21,7 @@ const App = () => {
   const handleBackButton = () => {
     setToShow(null);
     setHeightField(0);
-    setHeightField(0);
+    setWeightField(0);
   };
   return (
     <div className={styles.main}>
@@ -34,11 +34,11 @@ const App = () => {
         <div className={styles.leftSide}>
           <h1>Calcule o seu IMC</h1>
           <p>
-            O IMC, é índice de massa corpórea, que mede se você está, abaixo,
-            dentro ou acima do peso, de acordo com a relação entre seu peso e
-            altura. Descubra como calcular esse índice, quais os valores ideais,
-            as exceções da tabela padrão, a especificidade do IMC para crianças
-            e jovens.
+            Para Calcular seu IMC e saber o peso ideal para sua altura, preencha as
+            informações abaixo e clique em Calcular.
+            Importante: Após obter o resultado do Cálculo IMC não tome decisões
+            por conta própria, utilizer o IMC apenas como base.
+            Procure sempre um profissional da area de indocrinologia ou nutrição.
           </p>
 
           <input
