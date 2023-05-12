@@ -16,13 +16,13 @@ const App = () => {
     } else {
       alert("Preencha todos os campos!");
     }
-  }
-// RESET DOS CAMPOS COM AÇÃO DO CLICK
+  };
+  // RESET DOS CAMPOS COM AÇÃO DO CLICK
   const handleBackButton = () => {
     setToShow(null);
     setHeightField(0);
     setHeightField(0);
-  }
+  };
   return (
     <div className={styles.main}>
       <header>
@@ -46,35 +46,40 @@ const App = () => {
             placeholder="Digite a sua altura. Ex: 1.5 (em metros)"
             value={heightField > 0 ? heightField : ""}
             onChange={(e) => setHeightField(parseFloat(e.target.value))}
+            disabled={toshow ? true : false}
           />
           <input
             type="number"
             placeholder="Digite o seu peso. Ex: 80.3 (em kg)"
             value={weightField > 0 ? weightField : ""}
             onChange={(e) => setWeightField(parseFloat(e.target.value))}
+            disabled={toshow ? true : false}
           />
 
-          <button onClick={handleCalculeteButton}>Calcular</button>
+          <button
+            onClick={handleCalculeteButton}
+            disabled={toshow ? true : false}
+          >
+            Calcular
+          </button>
         </div>
 
         <div className={styles.rightSide}>
-
-          {!toshow &&
+          {!toshow && (
             <div className={styles.grid}>
-            {levels.map((item, key) => (
-              <GridItem key={key} item={item} />
-            ))}
-          </div>
-          }
-          {
-            toshow &&
+              {levels.map((item, key) => (
+                <GridItem key={key} item={item} />
+              ))}
+            </div>
+          )}
+          {toshow && (
             <div className={styles.rightBig}>
               <div className={styles.rightArrow} onClick={handleBackButton}>
-                <img src={leftArrowImage} alt="" width={25}/>
+                <img src={leftArrowImage} alt="" width={25} />
               </div>
-              <GridItem item={toshow}/>
+              <GridItem item={toshow} />
             </div>
-          }
+          )}
         </div>
       </div>
     </div>
